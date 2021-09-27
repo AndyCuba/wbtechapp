@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+    <header>
+        <div class="app__container">
+            <nav class="home__navigation">
+                <a class="home__logo" href="/">
+                    <img 
+                        type="image/webp" 
+                        srcset="assets/webp/ease-medium.webp 1x, assets/webp/ease-large.webp 2x"
+                    >
+                </a>
+                <ul>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="app__container">
+            <div class="home__main">
+                <div class="home__main-description">
+                    <p>Collection of lighting is inspired by the geometric works of the great Suprematist
+                     artists Kissitzky and Kazimir Malevich.</p>
+                    <p>Suprematism is a modernist movement in the art of the early twentieth century,
+                     focused on the basic geometric forms, such as circles, squares, lines and rectangles. 
+                     The geometric structure of the lamps will always look like a small art objects in your 
+                     house.</p>
+                    <div class="home__main-lamplist">
+                        <div class="home__main-lamplist-oval">
+                            <p><span>Material:</span> Copper</p>
+                            <p><span>Dimensions (cm):</span> H 33 x W 15 x D 15</p>
+                            <p><span>Net Weight:</span> 2.5 kg</p>
+                            <p><span>Electirfication:</span><br/> LED 10W | G9 | 220-240V | 50 Hz</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="home__main-image">
+                    <img 
+                        type="image/webp" 
+                        srcset="assets/webp/chair-medium.webp 1x, assets/webp/chair-large.webp 2x"
+                    >
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -25,7 +25,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'wbtechapp',
-            template: path.resolve(__dirname, './src/template.html'),
+            template: path.resolve(__dirname, './src/home.html'),
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
@@ -34,6 +34,10 @@ module.exports = {
     ],
     module: {
         rules: [
+            {
+                test: /\.(html)$/,
+                use: ['html-loader']
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
