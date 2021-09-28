@@ -9,7 +9,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #dbeeee;
+  background-color: $main-background;
   font-family: "SF Compact Display", sans-serif;
   @media (max-width: 1599px) {
     padding: 0 10px;

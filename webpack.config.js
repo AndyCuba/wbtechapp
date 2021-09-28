@@ -24,7 +24,6 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'wbtechapp',
             template: path.resolve(__dirname, './src/home.html'),
             filename: 'index.html',
         }),

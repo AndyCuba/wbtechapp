@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>wbtechapp</title>
 </head>
 <body>
     <header>
@@ -12,8 +12,8 @@
             <nav class="home__navigation">
                 <a class="home__logo" href="/">
                     <img 
-                        type="image/webp" 
-                        srcset="assets/webp/ease-medium.webp 1x, assets/webp/ease-large.webp 2x"
+                        src="assets/images/ease.svg"
+                        alt="logo"
                     >
                 </a>
                 <ul>
@@ -36,19 +36,37 @@
                      The geometric structure of the lamps will always look like a small art objects in your 
                      house.</p>
                     <div class="home__main-lamplist">
-                        <div class="home__main-lamplist-oval">
-                            <p><span>Material:</span> Copper</p>
-                            <p><span>Dimensions (cm):</span> H 33 x W 15 x D 15</p>
-                            <p><span>Net Weight:</span> 2.5 kg</p>
-                            <p><span>Electirfication:</span><br/> LED 10W | G9 | 220-240V | 50 Hz</p>
+                        <div id="description">
+                            <div class="home__main-lamplist-loader"></div>
+                        </div>                  
+                        <div class="home__main-lamplist-list">
+                            <div id="lamps"></div>
+                            <div class="home__main-lamplist-buttons">
+                                <button>
+                                    <img src="assets/images/light.svg" alt="light mode">
+                                </button>
+                                <button>
+                                    <img src="assets/images/dark.svg" alt="dark mode">
+                                </button>
+                            </div>
+                            <div class="home__main-lamplist-shadow"></div>
                         </div>
+                        <!-- <div class="home__main-lamplist-lamp">
+                            <img src="https://i.postimg.cc/BQJ1cYsJ/Lamp-2-2.png">
+                        </div> -->
                     </div>
                 </div>
                 <div class="home__main-image">
                     <img 
                         type="image/webp" 
                         srcset="assets/webp/chair-medium.webp 1x, assets/webp/chair-large.webp 2x"
+                        alt="room with chair"
                     >
+                    <div id="lamp">
+                        <!-- <div class="home__main-lamp">
+                            <img src="https://i.postimg.cc/BQJ1cYsJ/Lamp-2-2.png" alt="lamp">
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
