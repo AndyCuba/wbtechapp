@@ -4,8 +4,21 @@
   display: flex;
   justify-content: space-between;
   padding: 27px 30px 8px;
+  #menu {
+    display: none;
+    cursor: pointer;
+    @media (max-width: $width1000) {
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: url("../assets/images/menu.svg") center/cover;
+    }
+  }
   ul {
     display: flex;
+    @media (max-width: $width1000) {
+      display: none;
+    }
     li {
       &:first-child {
         padding-right: 64px;
@@ -23,6 +36,9 @@
         font-style: normal;
         font-weight: normal;
         font-size: 21px;
+        @media (max-width: $width1600) {
+          font-size: 15px;
+        }
         &:hover {
           text-decoration: underline;
         }
@@ -35,6 +51,15 @@
   width: 219px;
   height: 45px;
   display: block;
+  @media (max-width: $width1600) {
+    width: 150px;
+    height: 35px;
+    margin-right: 10px;
+  }
+  @media (max-width: $width1000) {
+    width: 120px;
+    height: 25px;
+  }
   img {
     width: 100%;
     height: auto;
@@ -45,11 +70,19 @@
 .home__main {
   display: flex;
   justify-content: space-between;
+  @media (max-width: $width1000) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .home__main-description {
   padding-top: 83px;
   flex-grow: 1;
+  @media (max-width: $width1600) {
+    padding-top: 20px;
+  }
   > p {
     max-width: 660px;
     font-weight: 100;
@@ -57,32 +90,70 @@
     line-height: 32px;
     letter-spacing: 0.055em;
     padding: 0 10px 25px 30px;
+    @media (max-width: $width1600) {
+      font-size: 15px;
+      letter-spacing: initial;
+      padding-bottom: 10px;
+      line-height: 20px;
+    }
+    @media (max-width: $width1300) {
+      max-width: 500px;
+    }
+    @media (max-width: $width1150) {
+      font-size: 12px;
+    }
+    @media (max-width: $width1000) {
+      max-width: 900px;
+      padding-left: 0;
+    }
     + p {
       padding-bottom: 80px;
+      @media (max-width: $width1600) {
+        padding-bottom: 30px;
+      }
+      @media (max-width: $width1000) {
+        padding-bottom: 15px;
+      }
     }
   }
 }
 
 .home__main-image {
-  width: 867px;
+  max-width: 867px;
   max-height: 1087px;
   padding-right: 30px;
   position: relative;
   z-index: 3;
+  @media (max-width: $width1600) {
+    max-width: 667px;
+    max-height: 887px;
+  }
+  @media (max-width: $width1300) {
+    max-width: 550px;
+  }
+  @media (max-width: $width1000) {
+    padding: 0;
+  }
   > img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
     border-radius: 18px;
   }
   #lamp {
-    transform: translateX(211px);
     height: 360px;
     max-width: 148px;
     position: absolute;
     z-index: 4;
     top: 0;
+    left: 25%;
     animation: fadeIn 1s ease-in;
+    @media (max-width: $width1600) {
+      height: 250px;
+    }
+    @media (max-width: $width1300) {
+      height: 150px;
+    }
     img {
       display: block;
       width: 100%;
@@ -106,6 +177,8 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: $width1000) {
+  }
 }
 
 #description {
@@ -121,12 +194,31 @@
   position: absolute;
   left: -57px;
   padding: 133px 39px 0 96px;
+  @media (max-width: $width1600) {
+    width: 310px;
+    height: 300px;
+    padding: 80px 20px 0 76px;
+  }
+  @media (max-width: $width1150) {
+    width: 250px;
+    height: 240px;
+    padding: 60px 15px 0 66px;
+  }
   p {
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
     letter-spacing: 0.055em;
     padding-bottom: 25px;
+    @media (max-width: $width1600) {
+      line-height: 15px;
+      letter-spacing: initial;
+      font-size: 12px;
+      padding-bottom: 10px;
+    }
+    @media (max-width: $width1150) {
+      font-size: 10px;
+    }
     span {
       font-weight: bold;
     }
@@ -140,14 +232,37 @@
   border-radius: 17px 0 0 17px;
   position: relative;
   z-index: 1;
+  @media (max-width: $width1600) {
+    width: 130px;
+    margin-top: 31px;
+  }
+  @media (max-width: $width1150) {
+    width: 100px;
+    margin-top: 21px;
+  }
   > div {
     &:first-child {
       height: 478px;
       overflow-y: scroll;
+      overflow-x: hidden;
       padding: 17px;
+      @media (max-width: $width1600) {
+        padding: 19px;
+        height: 400px;
+      }
+      @media (max-width: $width1300) {
+        height: 250px;
+      }
+      @media (max-width: $width1150) {
+        padding: 8px;
+        height: 200px;
+      }
       &::-webkit-scrollbar {
         width: 12px;
         box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.3) inset;
+        @media (max-width: $width1600) {
+          width: 9px;
+        }
       }
       &::-webkit-scrollbar-thumb {
         background: #94a6a6;
@@ -163,6 +278,11 @@
         margin-bottom: 20px;
         display: flex;
         justify-content: center;
+        @media (max-width: $width1600) {
+          width: 80px;
+          height: 78px;
+          margin-bottom: 10px;
+        }
         &:hover {
           background-color: rgba(255, 255, 255, 0.25);
         }
@@ -182,6 +302,9 @@
       height: 76px;
       outline: none;
       border: none;
+      @media (max-width: $width1150) {
+        height: 46px;
+      }
       &:first-child {
         background-color: #fff3da;
         border-radius: 0 0 0 17px;
@@ -202,21 +325,44 @@
     right: -99px;
     z-index: 2;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+    @media (max-width: $width1600) {
+      height: 400px;
+    }
+    @media (max-width: $width1300) {
+      height: 250px;
+    }
+    @media (max-width: $width1000) {
+      display: none;
+    }
   }
 }
 
 .home__main-lamplist-lamp {
   max-width: 251px;
-  max-height: 580px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   animation: slideIn 0.5s ease-in-out;
   transition: 0.5s all ease-in-out;
+  @media (max-width: $width1600) {
+    max-width: 200px;
+  }
+  @media (max-width: $width1150) {
+    max-width: 150px;
+  }
   img {
     display: block;
     width: 100%;
     max-height: 580px;
+    @media (max-width: $width1600) {
+      max-height: 380px;
+    }
+    @media (max-width: $width1300) {
+      max-height: 330px;
+    }
+    @media (max-width: $width1150) {
+      max-height: 230px;
+    }
   }
 }
 
