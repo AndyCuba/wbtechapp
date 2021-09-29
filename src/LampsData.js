@@ -2,13 +2,14 @@ const lampsUrl = 'https://private-anon-9fc3ae6c6b-lampshop.apiary-mock.com/lamps
 
 class LampsData {
     lamps = [];
+    darkMode = false;
 
     getLamps() {
         return this.lamps;
     };
 
     getActiveLamp() {
-        return this.lamps.find(lamp => lamp.isAcive === true);
+        return this.lamps.find(lamp => lamp.isActive === true);
     };
     
     //Add isActive key to lamps objects and makes first object active
@@ -32,7 +33,6 @@ class LampsData {
 
     //Sets active lamp by id
     setActiveLamp(id) {
-        console.log(id)
         if (id) {
             this.lamps = this.lamps.map(lamp => {
                 if (lamp.isActive) {
@@ -41,11 +41,19 @@ class LampsData {
                 
                 if (lamp.id === id) {
                     lamp.isActive = true;
-                }
+                };
+
                 return lamp;
             });
-            console.log(this.lamps)
         } 
+    };
+
+    toggleDarkMode() {
+        this.darkMode = !this.darkMode;
+    };
+
+    getDarkMode() {
+        return this.darkMode;
     };
 };
 

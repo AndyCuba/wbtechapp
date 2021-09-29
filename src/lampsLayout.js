@@ -1,15 +1,19 @@
-import { handleClick } from '.';
+import { lampsData } from ".";
+import { createLightImg } from "./darkLightModes";
 
 const lampList = document.getElementById('description');
-const lampImage = document.getElementById('lamp');
 const lamps = document.getElementById('lamps');
 
 function createLampLayout(arr) {
+    const lampImage = document.getElementById('lamp');
+
     let listMarkup = '';
     let lampsMarkup = '';
     let imageMarkup = '';
 
     function createMarkup(lamp, index) {
+        const isModeDark = lampsData.getDarkMode();
+        const activeLamp = lampsData.getActiveLamp();
 
         if (lamp.isActive) {
             listMarkup += `
@@ -27,9 +31,13 @@ function createLampLayout(arr) {
                             <img src="${lamp.image}">
                         </div>`;
 
-            imageMarkup += `<div class="home__main-lamp">
-                            <img src="${lamp.image}" alt="lamp">
-                        </div>`
+            //If chair img is dark, change it to light img
+            if (isModeDark) {
+                createLightImg(activeLamp);
+            } else {
+                imageMarkup += `<img src="${lamp.image}" alt="lamp">`;
+            };
+
         } else {
             lampsMarkup += `<div id=${lamp.id}>
                             <img src="${lamp.image}">
@@ -39,10 +47,9 @@ function createLampLayout(arr) {
         
     arr.forEach(createMarkup);
 
-    console.log(arr);
     lampList.innerHTML = listMarkup;
-    lampImage.innerHTML = imageMarkup;
     lamps.innerHTML = lampsMarkup;
+    if (lampImage) lampImage.innerHTML = imageMarkup;
 };
 
 export {

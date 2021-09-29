@@ -29,7 +29,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ],
     module: {
         rules: [
@@ -43,7 +43,7 @@ module.exports = {
                 use: ['babel-loader'],
             },
             {
-                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+                test: /\.(?:ico|webp|gif|png|jpg|jpeg)$/i,
                 type: 'asset/resource',
             },
             {
