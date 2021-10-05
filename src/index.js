@@ -1,5 +1,5 @@
 import LampsData from './LampsData';
-import { createLampLayout } from './lampsLayout';
+import { createLampLayout, updateLampLayout } from './lampsLayout';
 import { addButtonsListeners } from './darkLightModes';
 import './styles/main.scss';
 import './styles/home.scss';
@@ -13,9 +13,7 @@ function handleClick(e) {
     lampsData.setActiveLamp(Number(id));
 
     const lamps = lampsData.getLamps();
-
-    createLampLayout(lamps);
-    addLampsListeners();
+    updateLampLayout(lamps);
 };
 
 function addLampsListeners() {
